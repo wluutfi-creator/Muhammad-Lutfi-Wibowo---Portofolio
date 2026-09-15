@@ -1,1640 +1,2015 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Muhammad Lutfi Wibowo - Mechanical Engineering Portfolio">
-  <meta name="author" content="Muhammad Lutfi Wibowo">
-
-  <title>Muhammad Lutfi Wibowo | Mechanical Engineer</title>
-
-  <style>
-
-    /* =========================
-       GLOBAL
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #080b10;
-      --bg-soft: #0d1218;
-      --card: #111720;
-      --card-hover: #151c26;
-      --border: rgba(255,255,255,0.08);
-      --text: #f3f5f7;
-      --muted: #9ba5b2;
-      --muted-light: #c5ccd5;
-      --max: 1150px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: auto;
-    }
-
-    .section {
-      padding: 105px 0;
-    }
-
-    .section-title {
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      display: block;
-      color: #697383;
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .section-title h2 {
-      font-size: clamp(32px, 5vw, 50px);
-      line-height: 1.05;
-      letter-spacing: -1.5px;
-    }
-
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(8,11,16,0.86);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-container {
-      width: min(92%, var(--max));
-      margin: auto;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 13px;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 72px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .hero-small {
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 7vw, 84px);
-      line-height: 0.96;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: #8d96a3;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 16px;
-      margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: white;
-      color: black;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.82;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.06);
-      transform: translateY(-2px);
-    }
-
-    .hero-photo {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-photo img {
-      width: 330px;
-      height: 430px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      filter: grayscale(8%);
-      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
-    }
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 70px;
-      align-items: start;
-    }
-
-    .about-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-    }
-
-    .about-card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .about-card p {
-      color: var(--muted);
-      margin-bottom: 14px;
-      font-size: 14px;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 15px;
-    }
-
-    .highlight {
-      color: white;
-      font-weight: 700;
-    }
-
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 25px;
-      transition: 0.3s;
-    }
-
-    .skill-card:hover {
-      background: var(--card-hover);
-      transform: translateY(-3px);
-    }
-
-    .skill-card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .skill-card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 16px;
-    }
-
-    .skill-tags span {
-      border: 1px solid var(--border);
-      padding: 5px 9px;
-      border-radius: 5px;
-      color: var(--muted-light);
-      font-size: 11px;
-    }
-
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .timeline {
-      position: relative;
-      border-left: 1px solid var(--border);
-      margin-left: 8px;
-    }
-
-    .experience {
-      position: relative;
-      padding: 0 0 52px 35px;
-    }
-
-    .experience:last-child {
-      padding-bottom: 0;
-    }
-
-    .experience::before {
-      content: "";
-      position: absolute;
-      left: -5px;
-      top: 8px;
-      width: 9px;
-      height: 9px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    .experience-date {
-      color: #727d8b;
-      font-size: 12px;
-      margin-bottom: 6px;
-    }
-
-    .experience h3 {
-      font-size: 21px;
-      margin-bottom: 4px;
-    }
-
-    .company {
-      color: var(--muted-light);
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .experience ul {
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .experience li {
-      margin-bottom: 8px;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.15);
-    }
-
-    .project-content {
-      padding: 27px;
-    }
-
-    .project-number {
-      color: #697383;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-
-    .project-card h3 {
-      font-size: 23px;
-      margin-bottom: 11px;
-      line-height: 1.2;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .project-image {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      padding: 9px;
-      background: #090c11;
-    }
-
-    .project-image.single {
-      grid-template-columns: 1fr;
-    }
-
-    .project-image.triple {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 9px;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .project-image img:hover {
-      transform: scale(1.02);
-    }
-
-    .project-image.triple img {
-      height: 210px;
-    }
-
-    .placeholder {
-      min-height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 25px;
-      color: #596372;
-      font-size: 12px;
-      letter-spacing: 1px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .project-tags span {
-      padding: 5px 9px;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      color: #aeb6c1;
-      font-size: 10px;
-    }
-
-
-    /* =========================
-       EDUCATION
-    ========================= */
-
-    .education-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-    }
-
-    .education-card h3 {
-      font-size: 25px;
-      margin-bottom: 5px;
-    }
-
-    .education-card .date {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .education-card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 11px;
-    }
-
-    .education-card strong {
-      color: white;
-    }
-
-
-    /* =========================
-       DOCUMENTATION
-    ========================= */
-
-    .documentation-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .documentation-box h3 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .documentation-box p {
-      max-width: 680px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact-text {
-      max-width: 650px;
-      margin: 0 auto 35px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 0;
-      color: #68717e;
-      text-align: center;
-      font-size: 12px;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero-photo {
-        order: -1;
-      }
-
-      .hero-photo img {
-        width: 245px;
-        height: 315px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-image.triple {
-        grid-template-columns: 1fr;
-      }
-
-      .project-image.triple img {
-        height: 230px;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .section {
-        padding: 75px 0;
-      }
-
-      .logo {
-        font-size: 14px;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-        letter-spacing: -2.5px;
-      }
-
-      .hero-description {
-        font-size: 14px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-image {
-        grid-template-columns: 1fr;
-      }
-
-      .project-image img,
-      .project-image.triple img {
-        height: 235px;
-      }
-
-      .documentation-box,
-      .education-card {
-        padding: 25px;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muhammad Lutfi Wibowo | Mechanical Engineering Portfolio</title>
+
+    <meta name="description"
+        content="Portfolio of Muhammad Lutfi Wibowo, S.T. — Mechanical Engineering Fresh Graduate specializing in MEP, HVAC, Plumbing, Fire Protection, Industrial Utilities, and Mechanical Engineering.">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1f2937;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text small {
+            color: #38bdf8;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            margin: 15px 0 20px;
+            color: #ffffff;
+        }
+
+        .hero-text h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-text h2 {
+            font-size: 23px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #08111f;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #7dd3fc;
+        }
+
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-wrapper {
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            padding: 7px;
+            background: #38bdf8;
+        }
+
+        .profile-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #111827;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #ffffff;
+            margin: 8px 0 12px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+            color: #94a3b8;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            color: #ffffff;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .info-card h4 {
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            color: #cbd5e1;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .skill-card li::before {
+            content: "▹";
+            color: #38bdf8;
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #334155;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #38bdf8;
+            border: 4px solid #0b1120;
+        }
+
+        .timeline-item h3 {
+            color: #ffffff;
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h4 {
+            color: #38bdf8;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .timeline-date {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+        }
+
+        /*
+           Project image grid.
+           Supports 1, 2, 4, or more images.
+        */
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            background: #020617;
+        }
+
+        .project-images.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .project-images.four {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .project-images.single {
+            grid-template-columns: 1fr;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-images.four img {
+            height: 200px;
+        }
+
+        .project-images.three img {
+            height: 190px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-number {
+            color: #38bdf8;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .project-content h3 {
+            color: #ffffff;
+            font-size: 21px;
+            margin: 7px 0 12px;
+        }
+
+        .project-content p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 18px;
+        }
+
+        .project-tags span {
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #1e293b;
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            max-width: 850px;
+            margin: auto;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .education-card h3 {
+            color: #ffffff;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .education-card h4 {
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .education-date {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           DOCUMENTATION
+        ========================= */
+
+        .documentation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .documentation-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .documentation-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .documentation-card div {
+            padding: 18px;
+        }
+
+        .documentation-card h3 {
+            color: #ffffff;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 30px 20px;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e293b;
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .contact-card h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #94a3b8;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .documentation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                min-height: 70px;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px 15px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .profile-wrapper {
+                width: 230px;
+                height: 230px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .documentation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .project-images img,
+            .project-images.four img,
+            .project-images.three img {
+                height: 200px;
+            }
+
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-  <nav>
-    <div class="nav-container">
+    <nav>
 
-      <a href="#home" class="logo">
-        Muhammad Lutfi Wibowo
-      </a>
+        <div class="nav-container">
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+            <a href="#home" class="logo">
+                Lutfi<span>.</span>
+            </a>
 
-    </div>
-  </nav>
+            <ul class="nav-links">
 
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-  <!-- =========================
-       HERO
-  ========================= -->
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
 
-  <section id="home" class="hero">
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
 
-    <div class="container hero-grid">
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
 
-      <div>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
 
-        <div class="hero-small">
-          Fresh Graduate Mechanical Engineer
-        </div>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
 
-        <h1>
-          Muhammad<br>
-          <span>Lutfi Wibowo</span>
-        </h1>
-
-        <p class="hero-description">
-          Mechanical Engineering graduate with hands-on experience in
-          MEP engineering, mechanical design, building utilities,
-          industrial boiler systems, and engineering analysis.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn btn-primary">
-            View Projects
-          </a>
-
-          <a
-            href="CV Muhammad Lutfi.pdf"
-            class="btn btn-secondary"
-            target="_blank"
-          >
-            Download CV
-          </a>
+            </ul>
 
         </div>
 
-      </div>
+    </nav>
 
 
-      <div class="hero-photo">
 
-        <img
-          src="foto.jpg"
-          alt="Muhammad Lutfi Wibowo"
-        >
+    <!-- =========================
+         HOME
+    ========================= -->
 
-      </div>
+    <section id="home" class="hero">
 
-    </div>
+        <div class="container">
 
-  </section>
+            <div class="hero-content">
 
 
+                <div class="hero-text">
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
+                    <small>
+                        MECHANICAL ENGINEERING
+                    </small>
 
-  <section id="about" class="section">
+                    <h1>
+                        Muhammad Lutfi<br>
+                        <span>Wibowo, S.T.</span>
+                    </h1>
 
-    <div class="container">
+                    <h2>
+                        Mechanical Engineering Fresh Graduate
+                    </h2>
 
-      <div class="section-title">
-        <span>01 — About</span>
-        <h2>About Me</h2>
-      </div>
+                    <p>
+                        Fresh graduate in Mechanical Engineering with
+                        hands-on experience in MEP engineering, HVAC,
+                        plumbing, fire protection, electrical utilities,
+                        industrial boiler systems, and mechanical design.
+                    </p>
 
+                    <div class="hero-buttons">
 
-      <div class="about-grid">
+                        <a href="#projects"
+                           class="btn btn-primary">
+                            View My Projects
+                        </a>
 
+                        <a href="CV Muhammad Lutfi.pdf"
+                           class="btn btn-secondary"
+                           target="_blank">
+                            View CV
+                        </a>
 
-        <div class="about-card">
+                    </div>
 
-          <h3>Mechanical Engineering</h3>
+                </div>
 
-          <p>
-            Fresh graduate from Brawijaya University with practical
-            experience across commercial and industrial engineering projects.
-          </p>
 
-          <p>
-            Interested in MEP Design, Mechanical Engineering,
-            Project Engineering, and Industrial Utility Systems.
-          </p>
+                <div class="hero-image">
 
-        </div>
+                    <div class="profile-wrapper">
 
+                        <img src="foto.jpg"
+                             alt="Muhammad Lutfi Wibowo">
 
-        <div class="about-text">
+                    </div>
 
-          <p>
-            I am a
-            <span class="highlight">
-              Mechanical Engineering graduate
-            </span>
-            with hands-on internship experience in Mechanical,
-            Electrical, and Plumbing (MEP) engineering.
-          </p>
+                </div>
 
-          <p>
-            During my internship at
-            <span class="highlight">
-              PT Leguan Desain Indonesia
-            </span>,
-            I prepared and revised 20+ Detailed Engineering Design
-            (DED) drawings for plumbing and fire protection systems
-            using AutoCAD and GstarCAD.
-          </p>
 
-          <p>
-            At
-            <span class="highlight">
-              PT Pakuwon Sentosa Abadi Tbk
-            </span>,
-            I gained field experience involving HVAC,
-            fire protection, genset and ATS/AMF systems,
-            as well as MVMDP and LVMDP electrical installations.
-          </p>
-
-          <p>
-            I also gained industrial utility experience at
-            <span class="highlight">
-              PT Dharma Satya Nusantara Tbk
-            </span>,
-            particularly in thermal oil boiler operation,
-            piping, instrumentation, maintenance, and
-            thermal efficiency analysis.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       SKILLS
-  ========================= -->
-
-  <section id="skills" class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>02 — Skills</span>
-        <h2>Technical Skills</h2>
-      </div>
-
-
-      <div class="skills-grid">
-
-
-        <div class="skill-card">
-
-          <h3>MEP & Building Utilities</h3>
-
-          <p>
-            Building mechanical and utility systems with practical
-            experience in design, installation, inspection and coordination.
-          </p>
-
-          <div class="skill-tags">
-            <span>HVAC</span>
-            <span>Plumbing</span>
-            <span>Fire Protection</span>
-            <span>Genset</span>
-            <span>ATS/AMF</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <h3>Industrial Utilities</h3>
-
-          <p>
-            Experience supporting industrial boiler operation,
-            piping, instrumentation, maintenance and thermal analysis.
-          </p>
-
-          <div class="skill-tags">
-            <span>Boiler</span>
-            <span>Steam</span>
-            <span>Piping</span>
-            <span>Thermal Analysis</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <h3>Engineering Software</h3>
-
-          <p>
-            Engineering drafting, mechanical design, numerical
-            analysis and technical documentation.
-          </p>
-
-          <div class="skill-tags">
-            <span>AutoCAD</span>
-            <span>GstarCAD</span>
-            <span>Inventor</span>
-            <span>MATLAB</span>
-            <span>Excel</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <h3>Electrical Building Systems</h3>
-
-          <p>
-            Basic practical knowledge of electrical distribution
-            and backup power systems.
-          </p>
-
-          <div class="skill-tags">
-            <span>MVMDP</span>
-            <span>LVMDP</span>
-            <span>Cabling</span>
-            <span>Electrical Distribution</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <h3>Engineering Analysis</h3>
-
-          <p>
-            Data processing and engineering analysis for system
-            performance and research applications.
-          </p>
-
-          <div class="skill-tags">
-            <span>Thermal Analysis</span>
-            <span>Data Analysis</span>
-            <span>Numerical Computation</span>
-            <span>K-Means</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <h3>Professional Skills</h3>
-
-          <p>
-            Comfortable working with multidisciplinary teams,
-            field teams and project stakeholders.
-          </p>
-
-          <div class="skill-tags">
-            <span>Coordination</span>
-            <span>Communication</span>
-            <span>Problem Solving</span>
-            <span>Attention to Detail</span>
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
-
-  <section id="experience" class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>03 — Experience</span>
-        <h2>Work Experience</h2>
-      </div>
-
-
-      <div class="timeline">
-
-
-        <!-- EXPERIENCE 1 -->
-
-        <div class="experience">
-
-          <div class="experience-date">
-            Jan 2026 — Mar 2026
-          </div>
-
-          <h3>
-            Mechanical CAD Drafter (MEP)
-          </h3>
-
-          <div class="company">
-            PT Leguan Desain Indonesia — Jakarta
-          </div>
-
-          <ul>
-
-            <li>
-              Prepared and revised 20+ Detailed Engineering Design
-              (DED) drawings for plumbing and fire protection systems
-              using AutoCAD and GstarCAD.
-            </li>
-
-            <li>
-              Prepared ducting and piping layouts based on engineering
-              calculations, technical specifications and project requirements.
-            </li>
-
-            <li>
-              Supported coordination of MEP drawings with other disciplines.
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- EXPERIENCE 2 -->
-
-        <div class="experience">
-
-          <div class="experience-date">
-            Jun 2025 — Aug 2025
-          </div>
-
-          <h3>
-            Mechanical, Electrical & Plumbing Engineer
-          </h3>
-
-          <div class="company">
-            PT Pakuwon Sentosa Abadi Tbk — Jakarta
-          </div>
-
-          <ul>
-
-            <li>
-              Involved in HVAC installation works including AHU,
-              ducting and diffusers.
-            </li>
-
-            <li>
-              Supported inspection and testing of sprinkler,
-              hydrant and fire pump systems.
-            </li>
-
-            <li>
-              Coordinated genset installation and ATS/AMF setup
-              for backup power systems up to 5000 kVA.
-            </li>
-
-            <li>
-              Monitored and verified MVMDP, LVMDP and cabling systems
-              ranging from 20 kV to 400 V.
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- EXPERIENCE 3 -->
-
-        <div class="experience">
-
-          <div class="experience-date">
-            Jan 2025 — Feb 2025
-          </div>
-
-          <h3>
-            Engineering & Development
-          </h3>
-
-          <div class="company">
-            PT Dharma Satya Nusantara Tbk — Temanggung
-          </div>
-
-          <ul>
-
-            <li>
-              Monitored thermal oil boiler operation with capacity
-              of 3 ton/hour and 1800 kW.
-            </li>
-
-            <li>
-              Supported boiler maintenance and troubleshooting,
-              including piping and control instruments.
-            </li>
-
-            <li>
-              Conducted heat loss analysis on approximately 58 m
-              of piping and identified energy losses of 3.75 kW.
-            </li>
-
-            <li>
-              Collected and processed operational data for system
-              performance evaluation.
-            </li>
-
-          </ul>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       PROJECTS
-  ========================= -->
-
-  <section id="projects" class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>04 — Projects</span>
-        <h2>Selected Projects</h2>
-      </div>
-
-
-      <div class="project-grid">
-
-
-        <!-- PROJECT 01
-             HVAC -->
-
-        <article class="project-card">
-
-          <div class="project-image">
-
-            <img
-              src="hvac 1.jpg"
-              alt="HVAC Project 1"
-            >
-
-            <img
-              src="hvac 2.jpg"
-              alt="HVAC Project 2"
-            >
-
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 01
             </div>
 
-            <h3>
-              HVAC Design & DED
-            </h3>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    ABOUT ME
+                </span>
+
+                <h2>
+                    Who I Am
+                </h2>
+
+                <p>
+                    Mechanical Engineering graduate with practical
+                    engineering and project experience.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-text">
+
+                    <h3>
+                        Mechanical Engineering with
+                        MEP & Industrial Experience
+                    </h3>
+
+                    <p>
+                        I am a Mechanical Engineering fresh graduate
+                        from Universitas Brawijaya with hands-on
+                        experience across Mechanical, Electrical,
+                        and Plumbing (MEP) systems.
+                    </p>
+
+                    <p>
+                        My experience includes Mechanical CAD drafting,
+                        HVAC systems, plumbing, fire protection,
+                        genset and electrical utilities, as well as
+                        industrial boiler systems.
+                    </p>
+
+                    <p>
+                        I am interested in opportunities related to
+                        MEP Engineering, Mechanical Engineering,
+                        Project Engineering, Industrial Utilities,
+                        and Building Services.
+                    </p>
+
+                </div>
+
+
+                <div class="about-info">
+
+
+                    <div class="info-card">
+
+                        <h4>
+                            Education
+                        </h4>
+
+                        <p>
+                            Bachelor of Mechanical Engineering —
+                            Universitas Brawijaya
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <h4>
+                            Focus
+                        </h4>
+
+                        <p>
+                            MEP Engineering, Mechanical Design,
+                            HVAC, Utilities & Industrial Systems
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <h4>
+                            Location
+                        </h4>
+
+                        <p>
+                            Indonesia
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    EXPERTISE
+                </span>
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+                <p>
+                    Technical capabilities developed through academic,
+                    internship, and engineering project experience.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        MEP Engineering
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            HVAC Systems
+                        </li>
+
+                        <li>
+                            AHU & Ducting
+                        </li>
+
+                        <li>
+                            Plumbing Systems
+                        </li>
+
+                        <li>
+                            Fire Protection
+                        </li>
+
+                        <li>
+                            Sprinkler & Hydrant
+                        </li>
+
+                        <li>
+                            Building Utilities
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Mechanical Systems
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Industrial Boiler Monitoring
+                        </li>
+
+                        <li>
+                            Thermal Efficiency Evaluation
+                        </li>
+
+                        <li>
+                            Piping Systems
+                        </li>
+
+                        <li>
+                            Preventive Maintenance
+                        </li>
+
+                        <li>
+                            Troubleshooting
+                        </li>
+
+                        <li>
+                            Industrial Utilities
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Electrical Utilities
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Genset Systems
+                        </li>
+
+                        <li>
+                            ATS / AMF
+                        </li>
+
+                        <li>
+                            MVMDP / LVMDP
+                        </li>
+
+                        <li>
+                            Basic Electrical Distribution
+                        </li>
+
+                        <li>
+                            Genset Commissioning
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Engineering Software
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            AutoCAD
+                        </li>
+
+                        <li>
+                            GstarCAD
+                        </li>
+
+                        <li>
+                            Autodesk Inventor
+                        </li>
+
+                        <li>
+                            MATLAB
+                        </li>
+
+                        <li>
+                            Microsoft Excel
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Engineering Design
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            DED Drawings
+                        </li>
+
+                        <li>
+                            Mechanical Layout
+                        </li>
+
+                        <li>
+                            HVAC Layout
+                        </li>
+
+                        <li>
+                            Piping Layout
+                        </li>
+
+                        <li>
+                            Multidisciplinary Coordination
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Professional Skills
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Problem Solving
+                        </li>
+
+                        <li>
+                            Teamwork
+                        </li>
+
+                        <li>
+                            Communication
+                        </li>
+
+                        <li>
+                            Adaptability
+                        </li>
+
+                        <li>
+                            Field Coordination
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section id="experience" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    EXPERIENCE
+                </span>
+
+                <h2>
+                    Professional Experience
+                </h2>
+
+                <p>
+                    Engineering experience gained through internships
+                    across MEP, industrial utilities, and mechanical systems.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- EXPERIENCE 1 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <h3>
+                        Mechanical CAD Drafter (MEP)
+                    </h3>
+
+                    <h4>
+                        PT Leguan Desain Indonesia — Jakarta
+                    </h4>
+
+                    <div class="timeline-date">
+                        Jan 2026 – Mar 2026
+                    </div>
+
+                    <p>
+                        Created 20+ DED drawings for plumbing and
+                        fire protection systems using AutoCAD and
+                        GstarCAD. Developed ducting and piping layouts
+                        based on engineering calculations and technical
+                        specifications, while coordinating drawings
+                        with other disciplines.
+                    </p>
+
+                </div>
+
+
+                <!-- EXPERIENCE 2 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <h3>
+                        Mechanical, Electrical & Plumbing Engineer
+                    </h3>
+
+                    <h4>
+                        PT Pakuwon Sentosa Abadi Tbk — Jakarta
+                    </h4>
+
+                    <div class="timeline-date">
+                        Jun 2025 – Aug 2025
+                    </div>
+
+                    <p>
+                        Supported MEP site activities covering HVAC
+                        systems such as AHU, ducting, and diffusers.
+                        Conducted inspection and testing of sprinkler,
+                        hydrant, and fire pump systems. Also supported
+                        genset, ATS/AMF, MVMDP/LVMDP, and electrical
+                        distribution systems.
+                    </p>
+
+                </div>
+
+
+                <!-- EXPERIENCE 3 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <h3>
+                        Engineering & Development
+                    </h3>
+
+                    <h4>
+                        PT Dharma Satya Nusantara Tbk — Temanggung
+                    </h4>
+
+                    <div class="timeline-date">
+                        Jan 2025 – Feb 2025
+                    </div>
+
+                    <p>
+                        Monitored a 3 ton/hour, 1800 kW thermal oil
+                        boiler system and evaluated thermal efficiency.
+                        Supported maintenance and troubleshooting
+                        activities, including piping systems, control
+                        instruments, condensate monitoring, and
+                        operational data analysis.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    PORTFOLIO
+                </span>
+
+                <h2>
+                    Selected Projects
+                </h2>
+
+                <p>
+                    Selected engineering projects and technical
+                    documentation from academic and professional experience.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- =========================
+                     PROJECT 01
+                     HVAC
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images">
+
+                        <img src="HVAC Project 1.jpg"
+                             alt="HVAC Project 1">
+
+                        <img src="HVAC Project 2.jpg"
+                             alt="HVAC Project 2">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 01
+                        </span>
+
+                        <h3>
+                            HVAC Design & DED
+                        </h3>
+
+                        <p>
+                            HVAC design and technical drafting including
+                            ducting and air distribution layouts.
+                            Developed engineering drawings using AutoCAD
+                            and GstarCAD based on project specifications
+                            and calculations.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>HVAC</span>
+                            <span>AutoCAD</span>
+                            <span>GstarCAD</span>
+                            <span>DED</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 02
+                     FIRE PROTECTION
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images">
+
+                        <img src="pompa hydran.jpg"
+                             alt="Hydrant Pump System">
+
+                        <img src="Diagram Schematic Fire Fighting.jpeg"
+                             alt="Fire Fighting Schematic">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 02
+                        </span>
+
+                        <h3>
+                            Sprinkler & Hydrant System
+                        </h3>
+
+                        <p>
+                            Fire protection system documentation covering
+                            hydrant and sprinkler systems, fire pump
+                            arrangements, and schematic representation.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Fire Protection</span>
+                            <span>Hydrant</span>
+                            <span>Sprinkler</span>
+                            <span>Fire Pump</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 03
+                     GENSET
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images">
+
+                        <img src="foto gensettttt.jpg"
+                             alt="Genset System">
+
+                        <img src="psang kwh.jpg"
+                             alt="Electrical Utility Installation">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 03
+                        </span>
+
+                        <h3>
+                            Genset & Electrical Utilities
+                        </h3>
+
+                        <p>
+                            Field experience involving genset systems,
+                            ATS/AMF, electrical distribution, and utility
+                            installation activities for building systems.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Genset</span>
+                            <span>ATS/AMF</span>
+                            <span>MVMDP</span>
+                            <span>LVMDP</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 04
+                     BOILER
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images three">
+
+                        <img src="boiler 1.jpg"
+                             alt="Oil Boiler 1">
+
+                        <img src="boiler 2.jpg"
+                             alt="Oil Boiler 2">
+
+                        <img src="boiler 3.jpg"
+                             alt="Oil Boiler 3">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 04
+                        </span>
+
+                        <h3>
+                            Oil Boiler & Industrial Utility System
+                        </h3>
+
+                        <p>
+                            Industrial boiler operation and monitoring
+                            experience covering thermal efficiency,
+                            operational parameters, maintenance, piping,
+                            and utility system performance.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Boiler</span>
+                            <span>Thermal Efficiency</span>
+                            <span>Piping</span>
+                            <span>Industrial Utility</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 05
+                     MARINE CURRENT ENERGY
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images">
+
+                        <img src="zscore.jpg"
+                             alt="Z-Score Analysis">
+
+                        <img src="peta.jpg"
+                             alt="Marine Current Energy Potential Map">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 05
+                        </span>
+
+                        <h3>
+                            Marine Current Energy Potential
+                        </h3>
+
+                        <p>
+                            Undergraduate thesis analyzing Indonesian
+                            ocean current energy potential using
+                            satellite data from 2009–2024 and K-Means
+                            clustering to identify potential priority areas.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>MATLAB</span>
+                            <span>K-Means</span>
+                            <span>Z-Score</span>
+                            <span>Ocean Current</span>
+                            <span>Renewable Energy</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 06
+                     PLUMBING
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images single">
+
+                        <img src="desain plumbing.jpeg"
+                             alt="Plumbing Design">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 06
+                        </span>
+
+                        <h3>
+                            Plumbing Design
+                        </h3>
+
+                        <p>
+                            Plumbing design and technical drafting for
+                            building utility systems, including piping
+                            layouts and engineering documentation.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Plumbing</span>
+                            <span>AutoCAD</span>
+                            <span>Piping</span>
+                            <span>MEP</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 07
+                     3D MODELING
+                ========================= -->
+
+                <div class="project-card">
+
+
+                    <div class="project-images four">
+
+                        <img src="Ban.jpg"
+                             alt="3D Modeling Ban">
+
+                        <img src="Baling kipas.jpg"
+                             alt="3D Modeling Baling Kipas">
+
+                        <img src="Spinner.jpg"
+                             alt="3D Modeling Spinner">
+
+                        <img src="Velg.jpg"
+                             alt="3D Modeling Velg">
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-number">
+                            PROJECT 07
+                        </span>
+
+                        <h3>
+                            Mechanical CAD & 3D Modeling
+                        </h3>
+
+                        <p>
+                            Mechanical design and 3D modeling experience
+                            using engineering CAD software for technical
+                            visualization, component modeling, and
+                            mechanical design development.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Autodesk Inventor</span>
+                            <span>CAD</span>
+                            <span>3D Modeling</span>
+                            <span>Mechanical Design</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    EDUCATION
+                </span>
+
+                <h2>
+                    Academic Background
+                </h2>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Universitas Brawijaya
+                </h3>
+
+                <h4>
+                    Bachelor of Mechanical Engineering
+                </h4>
+
+                <div class="education-date">
+                    2022 – 2026
+                </div>
+
+                <p>
+                    GPA:
+                    <strong>
+                        3.33 / 4.00
+                    </strong>
+                </p>
+
+                <p>
+                    Undergraduate thesis:
+                    <strong>
+                        Potensi Energi Arus Laut di Perairan Indonesia
+                        Berdasarkan Analisis Data Satelit Setiap Triwulan
+                        Dalam Periode 2009–2024 Menggunakan Metode
+                        K-Means Clustering
+                    </strong>
+                </p>
+
+                <p>
+                    Relevant courses include Thermodynamics, Fluid Mechanics,
+                    Heat Transfer, Energy Conversion, Combustion Technology,
+                    and Renewable Energy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DOCUMENTATION
+    ========================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    DOCUMENTATION
+                </span>
+
+                <h2>
+                    Engineering Documentation
+                </h2>
+
+                <p>
+                    Selected field and engineering documentation.
+                </p>
+
+            </div>
+
+
+            <div class="documentation-grid">
+
+
+                <div class="documentation-card">
+
+                    <img src="foto gensettttt.jpg"
+                         alt="Genset Documentation">
+
+                    <div>
+
+                        <h3>
+                            Genset System
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="documentation-card">
+
+                    <img src="pompa hydran.jpg"
+                         alt="Hydrant Pump Documentation">
+
+                    <div>
+
+                        <h3>
+                            Hydrant Pump
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="documentation-card">
+
+                    <img src="psang kwh.jpg"
+                         alt="Electrical Installation">
+
+                    <div>
+
+                        <h3>
+                            Electrical Utility Installation
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    CONTACT
+                </span>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+                <p>
+                    Feel free to reach out for career opportunities,
+                    engineering projects, or professional collaboration.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <!-- PHONE -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <a href="tel:+6285775712011">
+                        085775712011
+                    </a>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <a href="mailto:wluutfi@gmail.com">
+                        wluutfi@gmail.com
+                    </a>
+
+                </div>
+
+
+                <!-- LINKEDIN -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        in
+                    </div>
+
+                    <h3>
+                        LinkedIn
+                    </h3>
+
+                    <a
+                        href="https://www.linkedin.com/in/muhammadlutfiwibowo/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Muhammad Lutfi Wibowo
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
 
             <p>
-              HVAC design and installation documentation involving
-              AHU, ducting and diffuser layouts based on technical
-              specifications and project requirements.
+                © 2026 Muhammad Lutfi Wibowo, S.T.
+                All Rights Reserved.
             </p>
 
-            <div class="project-tags">
-              <span>HVAC</span>
-              <span>AHU</span>
-              <span>Ducting</span>
-              <span>AutoCAD</span>
-              <span>DED</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 02
-             FIRE PROTECTION -->
-
-        <article class="project-card">
-
-          <div class="project-image">
-
-            <img
-              src="pompa hydran.jpg"
-              alt="Hydrant Pump System"
-            >
-
-            <img
-              src="Diagram Schematic Fire Fighting.jpeg"
-              alt="Fire Fighting Schematic"
-            >
-
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 02
-            </div>
-
-            <h3>
-              Sprinkler & Hydrant System
-            </h3>
-
-            <p>
-              Fire protection system involving sprinkler,
-              hydrant, fire pump and fire fighting piping
-              documentation and field inspection support.
-            </p>
-
-            <div class="project-tags">
-              <span>Fire Protection</span>
-              <span>Hydrant</span>
-              <span>Sprinkler</span>
-              <span>Fire Pump</span>
-              <span>MEP</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 03
-             GENSET -->
-
-        <article class="project-card">
-
-          <div class="project-image">
-
-            <img
-              src="foto gensettttt.jpg"
-              alt="Genset System"
-            >
-
-            <img
-              src="psang kwh.jpg"
-              alt="KWH Panel Installation"
-            >
-
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 03
-            </div>
-
-            <h3>
-              Genset & Electrical Utilities
-            </h3>
-
-            <p>
-              Backup power system experience involving genset,
-              ATS/AMF, electrical distribution and building
-              utility installations.
-            </p>
-
-            <div class="project-tags">
-              <span>Genset</span>
-              <span>ATS/AMF</span>
-              <span>MVMDP</span>
-              <span>LVMDP</span>
-              <span>Electrical</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 04
-             BOILER -->
-
-        <article class="project-card">
-
-          <div class="project-image triple">
-
-            <img
-              src="boiler 1.jpg"
-              alt="Oil Boiler Project 1"
-            >
-
-            <img
-              src="boiler 2.jpg"
-              alt="Oil Boiler Project 2"
-            >
-
-            <img
-              src="boiler 3.jpg"
-              alt="Oil Boiler Project 3"
-            >
-
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 04
-            </div>
-
-            <h3>
-              Oil Boiler & Steam System
-            </h3>
-
-            <p>
-              Industrial thermal oil boiler monitoring, piping,
-              instrumentation, maintenance support and thermal
-              efficiency analysis.
-            </p>
-
-            <div class="project-tags">
-              <span>Boiler</span>
-              <span>Steam</span>
-              <span>Piping</span>
-              <span>Thermal Analysis</span>
-              <span>Maintenance</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 05
-             MARINE ENERGY -->
-
-        <article class="project-card">
-
-          <div class="placeholder">
-            Marine Current Energy<br>
-            Project documentation will be added
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 05
-            </div>
-
-            <h3>
-              Marine Current Energy Potential
-            </h3>
-
-            <p>
-              Undergraduate thesis analyzing Indonesian marine
-              current energy potential using quarterly satellite
-              data, K-Means clustering and engineering analysis.
-            </p>
-
-            <div class="project-tags">
-              <span>MATLAB</span>
-              <span>K-Means</span>
-              <span>Satellite Data</span>
-              <span>Power Density</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 06
-             PLUMBING -->
-
-        <article class="project-card">
-
-          <div class="project-image single">
-
-            <img
-              src="desain plumbing.jpeg"
-              alt="Plumbing Design"
-            >
-
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 06
-            </div>
-
-            <h3>
-              Plumbing Design
-            </h3>
-
-            <p>
-              Plumbing design and technical drawing work developed
-              during MEP engineering experience using CAD-based
-              design and technical documentation.
-            </p>
-
-            <div class="project-tags">
-              <span>Plumbing</span>
-              <span>MEP</span>
-              <span>AutoCAD</span>
-              <span>GstarCAD</span>
-              <span>DED</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 07
-             MECHANICAL CAD -->
-
-        <article class="project-card">
-
-          <div class="placeholder">
-            Mechanical CAD & 3D Modeling<br>
-            Project documentation will be added
-          </div>
-
-
-          <div class="project-content">
-
-            <div class="project-number">
-              PROJECT 07
-            </div>
-
-            <h3>
-              Mechanical CAD & 3D Modeling
-            </h3>
-
-            <p>
-              Mechanical design and technical drawing activities
-              using Autodesk Inventor and CAD-based engineering tools.
-            </p>
-
-            <div class="project-tags">
-              <span>Autodesk Inventor</span>
-              <span>AutoCAD</span>
-              <span>3D Modeling</span>
-              <span>Mechanical Design</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       EDUCATION
-  ========================= -->
-
-  <section id="education" class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>05 — Education</span>
-        <h2>Education</h2>
-      </div>
-
-
-      <div class="education-card">
-
-        <h3>
-          Bachelor of Mechanical Engineering
-        </h3>
-
-        <div class="date">
-          Brawijaya University — Malang |
-          2022 — 2026
         </div>
 
-        <p>
-          GPA:
-          <strong>3.33 / 4.00</strong>
-        </p>
-
-        <p>
-          Undergraduate Thesis:
-          <strong>
-            The Potential of Ocean Current Energy in Indonesian
-            Waters Based on an Analysis of Quarterly Satellite Data
-            for the Period 2009–2024 Using the K-Means Clustering Method
-          </strong>
-        </p>
-
-        <p>
-          Relevant Courses:
-          Thermodynamics, Fluid Mechanics, Heat Transfer,
-          Energy Conversion, Combustion Technology and Renewable Energy.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       DOCUMENTATION
-  ========================= -->
-
-  <section class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>06 — Documentation</span>
-        <h2>Engineering Journey</h2>
-      </div>
-
-
-      <div class="documentation-box">
-
-        <h3>
-          From Design to Field Engineering
-        </h3>
-
-        <p>
-          My experience covers engineering design, CAD drafting,
-          MEP installation, inspection, commissioning support,
-          industrial utility systems and engineering analysis.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section id="contact" class="section contact">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span>07 — Contact</span>
-        <h2>Let's Connect</h2>
-      </div>
-
-
-      <p class="contact-text">
-        I am open to opportunities in Mechanical Engineering,
-        MEP Engineering, Project Engineering and Industrial
-        Utility Systems.
-      </p>
-
-
-      <div class="contact-links">
-
-        <!-- EMAIL NANTI KITA GANTI -->
-
-        <a
-          href="mailto:YOUR_EMAIL@example.com"
-          class="btn btn-primary"
-        >
-          Email
-        </a>
-
-
-        <!-- LINKEDIN NANTI KITA GANTI -->
-
-        <a
-          href="#"
-          class="btn btn-secondary"
-        >
-          LinkedIn
-        </a>
-
-
-        <!-- GITHUB NANTI KITA GANTI -->
-
-        <a
-          href="#"
-          class="btn btn-secondary"
-        >
-          GitHub
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <div class="container">
-
-      © 2026 Muhammad Lutfi Wibowo.
-      All Rights Reserved.
-
-    </div>
-
-  </footer>
+    </footer>
 
 
 </body>
