@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Muhammad Lutfi Wibowo, S.T. | Mechanical Engineering Portfolio</title>
+    <title>Muhammad Lutfi Wibowo | Mechanical Engineering Portfolio</title>
 
     <meta name="description"
         content="Portfolio of Muhammad Lutfi Wibowo, S.T. — Mechanical Engineering Fresh Graduate focused on MEP, Mechanical Engineering, Industrial Utilities, and Project Engineering.">
 
-    <!-- Google Fonts -->
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
 
+
     <style>
 
-        /* =========================================================
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+            --black: #050505;
+            --black-2: #080808;
+            --black-3: #101010;
+            --black-4: #151515;
+
+            --white: #ffffff;
+            --white-2: #f2f2f2;
+            --gray: #a4a4a4;
+            --gray-2: #858585;
+            --gray-3: #5f5f5f;
+
+            --line: rgba(255,255,255,0.10);
+            --line-strong: rgba(255,255,255,0.20);
+
+            --max-width: 1180px;
+
+            --radius: 18px;
+        }
+
+
+        /* =====================================================
            RESET
-        ========================================================= */
+        ====================================================== */
 
         * {
             margin: 0;
@@ -33,97 +62,75 @@
         }
 
         body {
+            margin: 0;
+
             font-family: "Inter", sans-serif;
-            background: #050505;
-            color: #f5f5f5;
+
+            background:
+                radial-gradient(
+                    circle at 85% 5%,
+                    rgba(255,255,255,0.045),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 45%,
+                    rgba(255,255,255,0.025),
+                    transparent 30%
+                ),
+                var(--black);
+
+            color: var(--white);
+
             line-height: 1.7;
+
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
-
-        :root {
-            --black: #050505;
-            --black-soft: #0a0a0a;
-            --black-card: #101010;
-
-            --white: #ffffff;
-            --white-soft: #e8e8e8;
-            --gray: #a3a3a3;
-            --gray-dark: #686868;
-
-            --border: rgba(255,255,255,0.10);
-            --border-hover: rgba(255,255,255,0.25);
-
-            --max-width: 1180px;
-
-            --radius: 18px;
-        }
-
-
-        /* =========================================================
-           BACKGROUND
-        ========================================================= */
-
         body::before {
             content: "";
+
             position: fixed;
+
             inset: 0;
+
             pointer-events: none;
-            z-index: -2;
+
+            opacity: 0.55;
 
             background-image:
                 linear-gradient(
-                    rgba(255,255,255,0.025) 1px,
+                    rgba(255,255,255,0.018) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.025) 1px,
+                    rgba(255,255,255,0.018) 1px,
                     transparent 1px
                 );
 
-            background-size: 50px 50px;
-        }
+            background-size: 55px 55px;
 
-        body::after {
-            content: "";
-            position: fixed;
-            width: 550px;
-            height: 550px;
-            top: -250px;
-            right: -200px;
-            border-radius: 50%;
-
-            background: rgba(255,255,255,0.025);
-
-            filter: blur(100px);
-            pointer-events: none;
             z-index: -1;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-        /* =========================================================
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
            CONTAINER
-        ========================================================= */
+        ====================================================== */
 
         .container {
             width: min(92%, var(--max-width));
@@ -131,22 +138,26 @@
         }
 
 
-        /* =========================================================
+        /* =====================================================
            NAVBAR
-        ========================================================= */
+        ====================================================== */
 
         nav {
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
-            z-index: 1000;
 
-            background: rgba(5,5,5,0.86);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            z-index: 999;
 
-            border-bottom: 1px solid var(--border);
+            background: rgba(5,5,5,0.88);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--line);
         }
 
         .nav-container {
@@ -159,67 +170,78 @@
 
         .logo {
             font-family: "Space Grotesk", sans-serif;
+
             font-size: 20px;
             font-weight: 700;
+
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: #888;
+            color: var(--gray-3);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+
+            gap: 27px;
 
             list-style: none;
         }
 
         .nav-links a {
-            color: #a8a8a8;
-            font-size: 13px;
+            color: var(--gray);
+
+            font-size: 12px;
             font-weight: 500;
 
             transition: 0.25s ease;
         }
 
         .nav-links a:hover {
-            color: #fff;
+            color: var(--white);
         }
 
         .nav-cta {
-            border: 1px solid rgba(255,255,255,0.2);
             padding: 8px 15px;
+
+            border: 1px solid var(--line-strong);
+
             border-radius: 999px;
-            color: #fff !important;
+
+            color: var(--white) !important;
         }
 
         .nav-cta:hover {
-            background: #fff;
-            color: #000 !important;
+            background: var(--white);
+
+            color: var(--black) !important;
         }
 
         .menu-toggle {
             display: none;
 
-            border: 1px solid var(--border);
-            background: #0d0d0d;
-            color: #fff;
-
             width: 42px;
             height: 42px;
 
+            border: 1px solid var(--line);
+
             border-radius: 10px;
 
-            font-size: 20px;
+            background: var(--black-3);
+
+            color: var(--white);
+
+            font-size: 19px;
+
             cursor: pointer;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================= */
+        ====================================================== */
 
         .hero {
             min-height: 100vh;
@@ -227,156 +249,205 @@
             display: flex;
             align-items: center;
 
-            padding: 120px 0 80px;
+            padding: 125px 0 85px;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--line);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+
+            grid-template-columns: 1.08fr 0.92fr;
+
             align-items: center;
-            gap: 80px;
+
+            gap: 75px;
         }
 
         .hero-label {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 9px;
+
+            gap: 10px;
 
             margin-bottom: 22px;
 
-            color: #aaa;
-            font-size: 11px;
+            color: var(--gray);
+
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 2.5px;
+
+            letter-spacing: 2.7px;
+
             text-transform: uppercase;
         }
 
         .hero-label::before {
             content: "";
-            width: 28px;
+
+            width: 30px;
             height: 1px;
+
             background: #777;
         }
 
         .hero h1 {
+            max-width: 700px;
+
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: clamp(42px, 6vw, 76px);
+            font-size: clamp(45px, 6vw, 76px);
+
             line-height: 1.02;
 
-            letter-spacing: -3px;
-
-            max-width: 760px;
+            letter-spacing: -3.5px;
         }
 
         .hero h1 span {
-            color: #858585;
+            display: block;
+
+            color: #777;
         }
 
         .hero h2 {
-            margin-top: 25px;
+            margin-top: 23px;
 
-            font-size: 21px;
+            color: #ddd;
+
+            font-size: 20px;
             font-weight: 500;
-
-            color: #d1d1d1;
         }
 
         .hero-description {
-            margin-top: 20px;
-
             max-width: 650px;
 
-            color: #9b9b9b;
-            font-size: 15px;
+            margin-top: 18px;
+
+            color: #929292;
+
+            font-size: 14px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 12px;
 
-            margin-top: 34px;
+            gap: 11px;
+
+            margin-top: 31px;
         }
 
         .btn {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
-            padding: 13px 21px;
+            min-height: 45px;
 
-            border-radius: 10px;
+            padding: 0 20px;
 
-            font-size: 13px;
+            border-radius: 9px;
+
+            font-size: 12px;
             font-weight: 600;
 
             transition: 0.25s ease;
         }
 
         .btn-primary {
-            background: #fff;
-            color: #000;
+            background: var(--white);
+
+            color: var(--black);
         }
 
         .btn-primary:hover {
-            background: #d8d8d8;
+            background: #dcdcdc;
+
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            border: 1px solid var(--border-hover);
-            color: #fff;
+            border: 1px solid var(--line-strong);
+
+            color: var(--white);
         }
 
         .btn-secondary:hover {
-            background: #151515;
+            background: var(--black-3);
+
             transform: translateY(-2px);
         }
 
 
-        /* =========================================================
-           HERO IMAGE
-        ========================================================= */
+        /* =====================================================
+           HERO PHOTO
+        ====================================================== */
 
-        .hero-photo-wrap {
+        .hero-photo-area {
             display: flex;
+
             justify-content: center;
         }
 
+        .hero-photo-frame {
+            position: relative;
+
+            width: min(380px, 100%);
+
+            padding: 10px;
+
+            border: 1px solid var(--line);
+
+            border-radius: 24px;
+
+            background: rgba(255,255,255,0.025);
+        }
+
+        .hero-photo-frame::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -8px;
+
+            border: 1px solid rgba(255,255,255,0.05);
+
+            border-radius: 28px;
+
+            pointer-events: none;
+        }
+
         .hero-photo {
-            width: min(390px, 100%);
+            width: 100%;
 
             aspect-ratio: 4 / 5;
 
             object-fit: cover;
 
-            border-radius: 22px;
+            border-radius: 17px;
 
-            border: 1px solid rgba(255,255,255,0.15);
+            /*
+              IMPORTANT:
+              FOTO PROFIL TETAP WARNA ASLI
+            */
+            filter: none;
 
-            filter: grayscale(100%);
-
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.55);
-
-            transition: 0.4s ease;
+            transition: 0.35s ease;
         }
 
-        .hero-photo:hover {
-            filter: grayscale(70%);
-            transform: translateY(-5px);
+        .hero-photo-frame:hover .hero-photo {
+            transform: scale(1.015);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            SECTION
-        ========================================================= */
+        ====================================================== */
 
         section {
             padding: 105px 0;
-            border-bottom: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--line);
         }
 
         .section-heading {
@@ -386,182 +457,214 @@
         .section-number {
             display: block;
 
-            margin-bottom: 8px;
+            margin-bottom: 9px;
 
-            color: #666;
+            color: var(--gray-3);
 
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
+
             letter-spacing: 2px;
         }
 
         .section-heading h2 {
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: clamp(30px, 4vw, 46px);
-            line-height: 1.1;
+            font-size: clamp(31px, 4vw, 48px);
 
-            letter-spacing: -1.5px;
+            line-height: 1.08;
+
+            letter-spacing: -1.8px;
         }
 
         .section-heading p {
-            margin-top: 12px;
+            max-width: 680px;
+
+            margin-top: 13px;
 
             color: #858585;
 
-            max-width: 650px;
-            font-size: 14px;
+            font-size: 13px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            ABOUT
-        ========================================================= */
+        ====================================================== */
 
-        .about-grid {
+        .about-layout {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 70px;
+
+            grid-template-columns: 1.35fr 0.65fr;
+
+            gap: 80px;
+
+            align-items: start;
         }
 
         .about-text p {
-            color: #aaa;
-            font-size: 15px;
+            max-width: 760px;
+
             margin-bottom: 17px;
+
+            color: #9b9b9b;
+
+            font-size: 14px;
         }
 
-        .about-highlight {
-            border-left: 1px solid #555;
+        .about-side {
+            padding: 26px;
 
-            padding-left: 25px;
-        }
-
-        .about-highlight strong {
-            display: block;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 22px;
-            color: #fff;
-
-            margin-bottom: 7px;
-        }
-
-        .about-highlight p {
-            color: #858585;
-            font-size: 13px;
-        }
-
-
-        /* =========================================================
-           SKILLS
-        ========================================================= */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .skill-card {
-            background: var(--black-card);
-
-            border: 1px solid var(--border);
+            border: 1px solid var(--line);
 
             border-radius: var(--radius);
 
-            padding: 25px;
-
-            transition: 0.3s ease;
+            background: rgba(255,255,255,0.025);
         }
 
-        .skill-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-        }
+        .about-side-label {
+            margin-bottom: 12px;
 
-        .skill-number {
-            color: #555;
-            font-size: 11px;
+            color: var(--gray-3);
+
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 1px;
+
+            letter-spacing: 1.7px;
+
+            text-transform: uppercase;
         }
 
-        .skill-card h3 {
-            margin: 17px 0 10px;
+        .about-side h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 23px;
+
+            line-height: 1.25;
+        }
+
+        .about-side p {
+            margin-top: 10px;
+
+            color: #858585;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ====================================================== */
+
+        .skills-list {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            border-top: 1px solid var(--line);
+        }
+
+        .skill-item {
+            min-height: 150px;
+
+            padding: 27px 30px;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .skill-item:nth-child(odd) {
+            border-right: 1px solid var(--line);
+        }
+
+        .skill-index {
+            color: #4f4f4f;
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .skill-item h3 {
+            margin-top: 13px;
 
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: 19px;
+            font-size: 20px;
         }
 
-        .skill-card p {
-            color: #888;
-            font-size: 13px;
+        .skill-item p {
+            max-width: 520px;
+
+            margin-top: 7px;
+
+            color: #858585;
+
+            font-size: 12.5px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            EXPERIENCE
-        ========================================================= */
+        ====================================================== */
 
         .experience-list {
-            display: flex;
-            flex-direction: column;
+            border-top: 1px solid var(--line);
         }
 
         .experience-item {
             display: grid;
-            grid-template-columns: 190px 1fr;
+
+            grid-template-columns: 185px 1fr;
 
             gap: 55px;
 
-            padding: 32px 0;
+            padding: 34px 0;
 
-            border-top: 1px solid var(--border);
-        }
-
-        .experience-item:last-child {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--line);
         }
 
         .experience-date {
-            color: #777;
-            font-size: 12px;
-            line-height: 1.6;
+            color: #6c6c6c;
+
+            font-size: 11px;
+
+            line-height: 1.7;
         }
 
         .experience-content h3 {
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: 22px;
-            margin-bottom: 4px;
+            font-size: 23px;
+
+            line-height: 1.2;
         }
 
         .experience-company {
-            color: #aaa;
+            margin-top: 4px;
 
-            font-size: 13px;
+            color: #b1b1b1;
+
+            font-size: 12px;
             font-weight: 600;
-
-            margin-bottom: 15px;
         }
 
-        .experience-content p {
-            color: #8e8e8e;
+        .experience-summary {
+            max-width: 830px;
 
-            font-size: 13.5px;
+            margin-top: 14px;
 
-            max-width: 850px;
+            color: #858585;
+
+            font-size: 12.8px;
         }
 
         .experience-points {
-            margin-top: 15px;
-
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 8px 30px;
+
+            margin-top: 16px;
 
             list-style: none;
         }
@@ -571,94 +674,107 @@
 
             padding-left: 16px;
 
-            color: #858585;
-            font-size: 12.5px;
+            color: #8d8d8d;
+
+            font-size: 11.8px;
         }
 
         .experience-points li::before {
             content: "—";
 
             position: absolute;
+
             left: 0;
 
             color: #555;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PROJECTS
-        ========================================================= */
+        ====================================================== */
 
         .projects-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 20px;
         }
 
         .project-card {
-            background: var(--black-card);
+            overflow: hidden;
 
-            border: 1px solid var(--border);
+            border: 1px solid var(--line);
 
             border-radius: var(--radius);
 
-            overflow: hidden;
+            background: var(--black-3);
 
             transition: 0.3s ease;
         }
 
         .project-card:hover {
-            border-color: var(--border-hover);
+            border-color: var(--line-strong);
 
             transform: translateY(-5px);
         }
 
-        .project-image-grid {
+        .project-images {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 1px;
 
-            background: #242424;
+            background: #272727;
         }
 
-        .project-image-grid img {
+        .project-images img {
             width: 100%;
-            height: 235px;
+
+            height: 225px;
 
             object-fit: cover;
 
             background: #080808;
 
             transition: 0.4s ease;
+
+            /*
+              PROJECT IMAGE TETAP WARNA ASLI
+            */
+            filter: none;
         }
 
-        .project-card:hover img {
-            filter: grayscale(100%);
-            transform: scale(1.015);
+        .project-card:hover .project-images img {
+            transform: scale(1.012);
         }
 
-        .project-single-image img {
+        .project-single img {
             width: 100%;
-            height: 300px;
+
+            height: 295px;
 
             object-fit: contain;
 
             background: #080808;
+
+            filter: none;
         }
 
         .project-content {
-            padding: 25px;
+            padding: 24px 25px 26px;
         }
 
         .project-tag {
-            color: #666;
+            color: #626262;
 
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
 
             letter-spacing: 1.7px;
+
             text-transform: uppercase;
         }
 
@@ -668,63 +784,92 @@
             font-family: "Space Grotesk", sans-serif;
 
             font-size: 21px;
+
+            line-height: 1.25;
         }
 
         .project-content p {
-            margin-top: 10px;
+            margin-top: 9px;
 
-            color: #888;
+            color: #858585;
 
-            font-size: 13px;
+            font-size: 12.5px;
         }
 
         .project-tools {
             display: flex;
+
             flex-wrap: wrap;
 
-            gap: 7px;
+            gap: 6px;
 
-            margin-top: 18px;
+            margin-top: 17px;
         }
 
         .project-tools span {
-            padding: 5px 9px;
+            padding: 4px 8px;
 
-            border: 1px solid var(--border);
+            border: 1px solid var(--line);
 
-            border-radius: 6px;
+            border-radius: 5px;
 
-            color: #aaa;
+            color: #a0a0a0;
 
-            font-size: 10px;
+            font-size: 9.5px;
         }
 
 
-        /* =========================================================
-           PROJECT 7 CENTER
-        ========================================================= */
+        /* =====================================================
+           PROJECT 04 - THREE IMAGES
+        ====================================================== */
 
-        .project-card.project-center {
+        .project-three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .project-three img {
+            height: 210px;
+        }
+
+
+        /* =====================================================
+           PROJECT 07 FEATURED / CENTER
+        ====================================================== */
+
+        .project-featured {
             grid-column: 1 / -1;
 
-            width: min(760px, 100%);
+            width: min(850px, 100%);
 
             justify-self: center;
         }
 
-        .project-center .project-image-grid {
+        .project-featured .project-images {
             grid-template-columns: repeat(4, 1fr);
         }
 
-        .project-center .project-image-grid img {
-            height: 220px;
+        .project-featured .project-images img {
+            height: 215px;
+
             object-fit: contain;
+
+            padding: 8px;
+
+            background: #080808;
+        }
+
+        .project-featured .project-content {
+            padding: 27px 30px 30px;
+        }
+
+        .project-featured .project-content h3 {
+            font-size: 24px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            EDUCATION
-        ========================================================= */
+        ====================================================== */
 
         .education-box {
             display: grid;
@@ -733,24 +878,27 @@
 
             gap: 45px;
 
-            padding: 32px;
+            padding: 30px;
 
-            background: var(--black-card);
-
-            border: 1px solid var(--border);
+            border: 1px solid var(--line);
 
             border-radius: var(--radius);
+
+            background: rgba(255,255,255,0.025);
         }
 
         .education-year {
-            color: #777;
-            font-size: 13px;
+            color: #686868;
+
+            font-size: 11px;
         }
 
         .education-content h3 {
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: 24px;
+            font-size: 25px;
+
+            line-height: 1.2;
         }
 
         .education-content h4 {
@@ -758,22 +906,28 @@
 
             color: #aaa;
 
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
         }
 
         .education-content p {
-            margin-top: 15px;
+            margin-top: 13px;
 
-            color: #888;
+            color: #858585;
 
-            font-size: 13px;
+            font-size: 12.5px;
+        }
+
+        .education-content strong {
+            color: #bdbdbd;
+
+            font-weight: 500;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            DOCUMENTATION
-        ========================================================= */
+        ====================================================== */
 
         .documentation-grid {
             display: grid;
@@ -788,11 +942,11 @@
 
             overflow: hidden;
 
+            border: 1px solid var(--line);
+
             border-radius: 12px;
 
-            border: 1px solid var(--border);
-
-            background: #0b0b0b;
+            background: #080808;
         }
 
         .documentation-item img {
@@ -801,142 +955,142 @@
 
             object-fit: cover;
 
-            filter: grayscale(100%);
+            /*
+              DOKUMENTASI FULL COLOR
+            */
+            filter: none;
 
-            transition: 0.4s ease;
+            transition: 0.35s ease;
         }
 
         .documentation-item:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            CONTACT
-        ========================================================= */
+        ====================================================== */
 
-        .contact-wrapper {
+        .contact-layout {
             display: grid;
 
             grid-template-columns: 1fr 1fr;
 
-            gap: 60px;
+            gap: 80px;
+
+            align-items: end;
         }
 
         .contact-title {
             font-family: "Space Grotesk", sans-serif;
 
-            font-size: clamp(32px, 5vw, 58px);
+            font-size: clamp(38px, 5vw, 60px);
 
-            line-height: 1.05;
+            line-height: 1;
 
-            letter-spacing: -2px;
+            letter-spacing: -2.5px;
         }
 
         .contact-description {
+            max-width: 500px;
+
             margin-top: 18px;
 
-            color: #888;
+            color: #858585;
 
-            font-size: 14px;
-            max-width: 480px;
+            font-size: 13px;
         }
 
         .contact-links {
-            display: flex;
-            flex-direction: column;
+            border-top: 1px solid var(--line);
         }
 
         .contact-link {
             display: flex;
+
             justify-content: space-between;
             align-items: center;
 
-            padding: 18px 0;
+            gap: 20px;
 
-            border-bottom: 1px solid var(--border);
+            padding: 17px 0;
 
-            color: #aaa;
+            border-bottom: 1px solid var(--line);
 
-            font-size: 13px;
+            color: #9b9b9b;
+
+            font-size: 12px;
 
             transition: 0.25s ease;
         }
 
-        .contact-link:first-child {
-            border-top: 1px solid var(--border);
-        }
-
         .contact-link:hover {
-            color: #fff;
             padding-left: 7px;
+
+            color: var(--white);
         }
 
-        .contact-link span:last-child {
+        .contact-arrow {
             color: #555;
+
+            font-size: 15px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ====================================================== */
 
         footer {
-            padding: 35px 0;
+            padding: 34px 0;
 
-            color: #555;
+            color: #505050;
 
-            font-size: 11px;
+            font-size: 10px;
 
             text-align: center;
         }
 
 
-        /* =========================================================
-           RESPONSIVE — TABLET
-        ========================================================= */
+        /* =====================================================
+           TABLET
+        ====================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 950px) {
 
             .hero-grid {
                 grid-template-columns: 1fr;
 
-                gap: 50px;
+                gap: 55px;
             }
 
-            .hero-photo-wrap {
+            .hero-photo-area {
                 justify-content: flex-start;
             }
 
-            .hero-photo {
-                width: 300px;
+            .hero-photo-frame {
+                width: 320px;
             }
 
-            .about-grid {
+            .about-layout {
                 grid-template-columns: 1fr;
+
                 gap: 35px;
             }
 
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-wrapper {
+            .contact-layout {
                 grid-template-columns: 1fr;
-                gap: 45px;
-            }
 
-            .documentation-grid {
-                grid-template-columns: repeat(3, 1fr);
+                gap: 45px;
             }
 
         }
 
 
-        /* =========================================================
-           RESPONSIVE — MOBILE
-        ========================================================= */
+        /* =====================================================
+           MOBILE
+        ====================================================== */
 
         @media (max-width: 700px) {
 
@@ -945,14 +1099,14 @@
             }
 
 
-            /* NAVBAR */
+            /* NAV */
 
             .nav-container {
                 height: 65px;
             }
 
             .logo {
-                font-size: 17px;
+                font-size: 18px;
             }
 
             .menu-toggle {
@@ -967,28 +1121,32 @@
 
                 width: 100%;
 
-                padding: 12px 5% 18px;
-
+                display: flex;
                 flex-direction: column;
                 align-items: stretch;
 
                 gap: 0;
 
-                background: rgba(5,5,5,0.97);
+                padding: 10px 5% 16px;
 
-                border-bottom: 1px solid var(--border);
+                background: rgba(5,5,5,0.98);
+
+                border-bottom: 1px solid var(--line);
 
                 opacity: 0;
+
                 visibility: hidden;
 
-                transform: translateY(-10px);
+                transform: translateY(-8px);
 
                 transition: 0.25s ease;
             }
 
             .nav-links.active {
                 opacity: 1;
+
                 visibility: visible;
+
                 transform: translateY(0);
             }
 
@@ -999,14 +1157,15 @@
             .nav-links a {
                 display: block;
 
-                padding: 11px 0;
+                padding: 10px 0;
 
                 border-bottom: 1px solid rgba(255,255,255,0.05);
             }
 
             .nav-cta {
-                border: none;
-                padding: 11px 0;
+                padding: 10px 0;
+
+                border: 0;
             }
 
 
@@ -1015,54 +1174,58 @@
             .hero {
                 min-height: auto;
 
-                padding: 120px 0 70px;
+                padding: 110px 0 65px;
             }
 
             .hero-grid {
-                gap: 40px;
+                gap: 42px;
             }
 
             .hero h1 {
-                font-size: clamp(40px, 12vw, 58px);
+                font-size: clamp(39px, 12vw, 57px);
 
-                letter-spacing: -2px;
+                letter-spacing: -2.5px;
             }
 
             .hero h2 {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .hero-description {
-                font-size: 13px;
+                font-size: 12.5px;
             }
 
             .hero-buttons {
                 flex-direction: column;
 
-                width: 100%;
+                margin-top: 27px;
             }
 
             .btn {
                 width: 100%;
             }
 
-            .hero-photo-wrap {
+            .hero-photo-area {
                 justify-content: center;
             }
 
-            .hero-photo {
-                width: min(82vw, 320px);
+            .hero-photo-frame {
+                width: min(82vw, 315px);
             }
 
 
-            /* SECTION */
+            /* SECTIONS */
 
             section {
                 padding: 75px 0;
             }
 
             .section-heading {
-                margin-bottom: 32px;
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
             }
 
 
@@ -1072,21 +1235,29 @@
                 font-size: 13px;
             }
 
-            .about-highlight {
-                padding-left: 18px;
+            .about-side {
+                padding: 22px;
             }
 
 
             /* SKILLS */
 
-            .skills-grid {
+            .skills-list {
                 grid-template-columns: 1fr;
-
-                gap: 12px;
             }
 
-            .skill-card {
-                padding: 21px;
+            .skill-item {
+                min-height: auto;
+
+                padding: 23px 20px;
+            }
+
+            .skill-item:nth-child(odd) {
+                border-right: 0;
+            }
+
+            .skill-item h3 {
+                font-size: 18px;
             }
 
 
@@ -1095,15 +1266,16 @@
             .experience-item {
                 grid-template-columns: 1fr;
 
-                gap: 12px;
+                gap: 11px;
 
-                padding: 25px 0;
+                padding: 27px 0;
             }
 
             .experience-date {
-                font-size: 11px;
+                font-size: 10px;
 
                 text-transform: uppercase;
+
                 letter-spacing: 0.5px;
             }
 
@@ -1111,14 +1283,20 @@
                 font-size: 20px;
             }
 
-            .experience-content p {
-                font-size: 12.5px;
+            .experience-summary {
+                font-size: 12px;
             }
 
             .experience-points {
                 grid-template-columns: 1fr;
 
                 gap: 6px;
+
+                margin-top: 14px;
+            }
+
+            .experience-points li {
+                font-size: 11.5px;
             }
 
 
@@ -1130,15 +1308,23 @@
                 gap: 16px;
             }
 
-            .project-image-grid {
-                grid-template-columns: 1fr 1fr;
+            .project-images {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .project-image-grid img {
+            .project-images img {
                 height: 170px;
             }
 
-            .project-single-image img {
+            .project-three {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-three img {
+                height: 150px;
+            }
+
+            .project-single img {
                 height: 240px;
             }
 
@@ -1155,18 +1341,26 @@
             }
 
 
-            /* PROJECT 7 */
+            /* PROJECT 07 */
 
-            .project-card.project-center {
+            .project-featured {
                 width: 100%;
             }
 
-            .project-center .project-image-grid {
+            .project-featured .project-images {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .project-center .project-image-grid img {
-                height: 155px;
+            .project-featured .project-images img {
+                height: 150px;
+            }
+
+            .project-featured .project-content {
+                padding: 23px;
+            }
+
+            .project-featured .project-content h3 {
+                font-size: 21px;
             }
 
 
@@ -1175,7 +1369,7 @@
             .education-box {
                 grid-template-columns: 1fr;
 
-                gap: 10px;
+                gap: 9px;
 
                 padding: 22px;
             }
@@ -1196,18 +1390,18 @@
 
             /* CONTACT */
 
-            .contact-wrapper {
-                gap: 35px;
+            .contact-layout {
+                gap: 38px;
             }
 
             .contact-title {
-                font-size: 40px;
+                font-size: 42px;
+
+                letter-spacing: -2px;
             }
 
             .contact-link {
-                font-size: 12px;
-
-                gap: 15px;
+                font-size: 11px;
 
                 word-break: break-word;
             }
@@ -1215,40 +1409,49 @@
         }
 
 
-        /* =========================================================
-           VERY SMALL MOBILE
-        ========================================================= */
+        /* =====================================================
+           SMALL PHONE
+        ====================================================== */
 
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
 
             .hero h1 {
-                font-size: 39px;
+                font-size: 38px;
             }
 
-            .hero-photo {
+            .hero-photo-frame {
                 width: 270px;
             }
 
-            .project-center .project-image-grid img {
-                height: 130px;
+            .project-images img {
+                height: 140px;
             }
 
-            .project-image-grid img {
-                height: 145px;
+            .project-three img {
+                height: 125px;
+            }
+
+            .project-featured .project-images img {
+                height: 125px;
+            }
+
+            .contact-title {
+                font-size: 37px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          NAVIGATION
-    ========================================================= -->
+    ====================================================== -->
 
     <nav>
 
@@ -1258,7 +1461,11 @@
                 MLW<span>.</span>
             </a>
 
-            <button class="menu-toggle" id="menuToggle">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
                 ☰
             </button>
 
@@ -1281,7 +1488,9 @@
                 </li>
 
                 <li>
-                    <a href="#contact" class="nav-cta">Contact</a>
+                    <a href="#contact" class="nav-cta">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
@@ -1292,9 +1501,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          HERO
-    ========================================================= -->
+    ====================================================== -->
 
     <section class="hero" id="home">
 
@@ -1302,7 +1511,8 @@
 
             <div class="hero-grid">
 
-                <div>
+
+                <div class="hero-text">
 
                     <div class="hero-label">
                         Mechanical Engineering
@@ -1318,20 +1528,26 @@
                     </h2>
 
                     <p class="hero-description">
-                        Mechanical Engineering graduate with practical experience
-                        in MEP systems, mechanical design, industrial utilities,
-                        site engineering, and engineering documentation.
+                        Mechanical Engineering graduate with practical
+                        experience in MEP systems, mechanical drafting,
+                        industrial utilities, site engineering, and
+                        engineering documentation.
                     </p>
 
                     <div class="hero-buttons">
 
-                        <a href="#projects" class="btn btn-primary">
+                        <a
+                            href="#projects"
+                            class="btn btn-primary"
+                        >
                             View My Projects
                         </a>
 
-                        <a href="CV Muhammad Lutfi.pdf"
-                           target="_blank"
-                           class="btn btn-secondary">
+                        <a
+                            href="CV Muhammad Lutfi.pdf"
+                            target="_blank"
+                            class="btn btn-secondary"
+                        >
                             View CV
                         </a>
 
@@ -1340,15 +1556,20 @@
                 </div>
 
 
-                <div class="hero-photo-wrap">
+                <div class="hero-photo-area">
 
-                    <img
-                        src="foto.jpg"
-                        alt="Muhammad Lutfi Wibowo"
-                        class="hero-photo"
-                    >
+                    <div class="hero-photo-frame">
+
+                        <img
+                            src="foto.jpg"
+                            alt="Muhammad Lutfi Wibowo"
+                            class="hero-photo"
+                        >
+
+                    </div>
 
                 </div>
+
 
             </div>
 
@@ -1358,9 +1579,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          ABOUT
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="about">
 
@@ -1380,45 +1601,53 @@
             </div>
 
 
-            <div class="about-grid">
+            <div class="about-layout">
+
 
                 <div class="about-text">
 
                     <p>
                         I am a Mechanical Engineering fresh graduate from
-                        Universitas Brawijaya with practical experience across
-                        MEP systems, mechanical drafting, industrial utilities,
-                        and engineering site activities.
+                        Universitas Brawijaya with practical experience in
+                        MEP systems, mechanical drafting, industrial
+                        utilities, and engineering site activities.
                     </p>
 
                     <p>
-                        My experience includes HVAC, fire protection, plumbing,
-                        electrical support systems, boiler operation, piping,
-                        equipment monitoring, and technical documentation.
+                        My experience includes HVAC, fire protection,
+                        plumbing, boiler operation, piping, equipment
+                        monitoring, electrical support systems, and
+                        technical documentation.
                     </p>
 
                     <p>
-                        I am interested in roles related to Mechanical Engineering,
-                        MEP Engineering, Project Engineering, Industrial Utilities,
+                        I am interested in opportunities related to
+                        Mechanical Engineering, MEP Engineering,
+                        Project Engineering, Industrial Utilities,
                         and Facility Engineering.
                     </p>
 
                 </div>
 
 
-                <div class="about-highlight">
+                <div class="about-side">
 
-                    <strong>
-                        Mechanical × MEP
-                    </strong>
+                    <div class="about-side-label">
+                        Engineering Focus
+                    </div>
+
+                    <h3>
+                        Mechanical × MEP × Industrial Utilities
+                    </h3>
 
                     <p>
                         Combining engineering fundamentals with practical
-                        experience in design, site coordination, equipment,
+                        exposure to design, site activities, equipment,
                         utilities, and technical documentation.
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -1428,9 +1657,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          SKILLS
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="skills">
 
@@ -1447,19 +1676,21 @@
                 </h2>
 
                 <p>
-                    Selected engineering skills developed through academic,
-                    project, internship, and site experience.
+                    Selected technical capabilities developed through
+                    academic, project, internship, and site experience.
                 </p>
 
             </div>
 
 
-            <div class="skills-grid">
+            <div class="skills-list">
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">01</span>
+                    <span class="skill-index">
+                        01
+                    </span>
 
                     <h3>
                         Mechanical Design
@@ -1474,43 +1705,47 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">02</span>
+                    <span class="skill-index">
+                        02
+                    </span>
 
                     <h3>
                         HVAC & MEP
                     </h3>
 
                     <p>
-                        AHU, ducting, diffusers, piping,
-                        plumbing, fire protection, sprinkler,
-                        and hydrant systems.
+                        AHU, ducting, diffusers, piping, plumbing,
+                        fire protection, sprinkler, and hydrant systems.
                     </p>
 
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">03</span>
+                    <span class="skill-index">
+                        03
+                    </span>
 
                     <h3>
                         Industrial Utilities
                     </h3>
 
                     <p>
-                        Boiler systems, steam, piping,
-                        condensate monitoring, thermal efficiency,
-                        and utility equipment.
+                        Boiler systems, steam, piping, condensate,
+                        thermal efficiency, and utility equipment.
                     </p>
 
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">04</span>
+                    <span class="skill-index">
+                        04
+                    </span>
 
                     <h3>
                         Electrical Support
@@ -1518,45 +1753,47 @@
 
                     <p>
                         Genset, ATS/AMF, MVMDP/LVMDP,
-                        electrical distribution, and equipment
-                        monitoring.
+                        electrical distribution, and equipment monitoring.
                     </p>
 
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">05</span>
+                    <span class="skill-index">
+                        05
+                    </span>
 
                     <h3>
                         Engineering Analysis
                     </h3>
 
                     <p>
-                        MATLAB, Excel, data processing,
-                        statistical analysis, visualization,
-                        and engineering calculations.
+                        MATLAB, Excel, data processing, statistical
+                        analysis, visualization, and engineering calculations.
                     </p>
 
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-item">
 
-                    <span class="skill-number">06</span>
+                    <span class="skill-index">
+                        06
+                    </span>
 
                     <h3>
                         Site Engineering
                     </h3>
 
                     <p>
-                        Inspection, testing, monitoring,
-                        coordination, installation observation,
-                        and troubleshooting support.
+                        Inspection, testing, monitoring, coordination,
+                        installation observation, and troubleshooting support.
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -1566,9 +1803,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          EXPERIENCE
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="experience">
 
@@ -1581,9 +1818,13 @@
                 </span>
 
                 <h2>
-                    Where I gained<br>
-                    practical experience.
+                    Practical experience.
                 </h2>
+
+                <p>
+                    Experience across mechanical drafting, MEP site work,
+                    industrial utilities, and engineering operations.
+                </p>
 
             </div>
 
@@ -1593,12 +1834,16 @@
 
                 <!-- EXPERIENCE 01 -->
 
-                <div class="experience-item">
+                <article class="experience-item">
 
                     <div class="experience-date">
+
                         Jan 2026 — Mar 2026<br>
+
                         Jakarta
+
                     </div>
+
 
                     <div class="experience-content">
 
@@ -1610,17 +1855,18 @@
                             PT Leguan Desain Indonesia
                         </div>
 
-                        <p>
-                            Worked on mechanical and MEP engineering
-                            documentation, mainly supporting the preparation
-                            and development of detailed engineering drawings.
+                        <p class="experience-summary">
+                            Supported the preparation and development of
+                            mechanical and MEP engineering documentation,
+                            with a focus on detailed engineering drawings
+                            and coordination.
                         </p>
 
                         <ul class="experience-points">
 
                             <li>
-                                Prepared 20+ DED drawings for plumbing and
-                                fire protection systems.
+                                Prepared 20+ DED drawings for plumbing
+                                and fire protection systems.
                             </li>
 
                             <li>
@@ -1634,26 +1880,30 @@
                             </li>
 
                             <li>
-                                Performed clash checking against architectural
-                                and structural drawings.
+                                Performed clash checking against
+                                architectural and structural drawings.
                             </li>
 
                         </ul>
 
                     </div>
 
-                </div>
+                </article>
 
 
 
                 <!-- EXPERIENCE 02 -->
 
-                <div class="experience-item">
+                <article class="experience-item">
 
                     <div class="experience-date">
+
                         Jun 2025 — Aug 2025<br>
+
                         Jakarta
+
                     </div>
+
 
                     <div class="experience-content">
 
@@ -1665,26 +1915,27 @@
                             PT Pakuwon Sentosa Abadi Tbk
                         </div>
 
-                        <p>
-                            Supported MEP site activities involving mechanical,
-                            fire protection, HVAC, and electrical support systems
-                            within a building project environment.
+                        <p class="experience-summary">
+                            Supported MEP site activities involving HVAC,
+                            fire protection, electrical support systems,
+                            inspection, testing, and coordination.
                         </p>
 
                         <ul class="experience-points">
 
                             <li>
-                                Monitored AHU, ducting, and diffuser installation.
+                                Monitored AHU, ducting, and diffuser
+                                installation activities.
                             </li>
 
                             <li>
-                                Supported sprinkler, hydrant, and fire pump
-                                inspection activities.
+                                Supported sprinkler, hydrant, and fire
+                                pump inspection activities.
                             </li>
 
                             <li>
-                                Observed genset and ATS/AMF systems up to
-                                5000 kVA.
+                                Observed genset and ATS/AMF systems
+                                up to 5000 kVA.
                             </li>
 
                             <li>
@@ -1694,25 +1945,29 @@
 
                             <li>
                                 Assisted inspection, testing, monitoring,
-                                and coordination with site teams.
+                                and site coordination.
                             </li>
 
                         </ul>
 
                     </div>
 
-                </div>
+                </article>
 
 
 
                 <!-- EXPERIENCE 03 -->
 
-                <div class="experience-item">
+                <article class="experience-item">
 
                     <div class="experience-date">
+
                         Jan 2025 — Feb 2025<br>
+
                         Temanggung
+
                     </div>
+
 
                     <div class="experience-content">
 
@@ -1724,7 +1979,7 @@
                             PT Dharma Satya Nusantara Tbk
                         </div>
 
-                        <p>
+                        <p class="experience-summary">
                             Gained practical exposure to industrial utility
                             systems, particularly thermal oil boiler operation,
                             maintenance, piping, instrumentation, and
@@ -1734,33 +1989,35 @@
                         <ul class="experience-points">
 
                             <li>
-                                Monitored a 3 ton/hour, 1800 kW thermal oil boiler.
+                                Monitored a 3 ton/hour, 1800 kW
+                                thermal oil boiler.
                             </li>
 
                             <li>
-                                Evaluated boiler thermal efficiency with
-                                performance target ≥82%.
+                                Evaluated boiler thermal efficiency
+                                with performance target ≥82%.
                             </li>
 
                             <li>
-                                Supported maintenance and troubleshooting
-                                activities.
+                                Supported maintenance and
+                                troubleshooting activities.
                             </li>
 
                             <li>
-                                Observed piping and control instrumentation
-                                systems.
+                                Observed piping and control
+                                instrumentation systems.
                             </li>
 
                             <li>
-                                Monitored condensate and operating parameters.
+                                Monitored condensate and
+                                operating parameters.
                             </li>
 
                         </ul>
 
                     </div>
 
-                </div>
+                </article>
 
 
             </div>
@@ -1771,9 +2028,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          PROJECTS
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="projects">
 
@@ -1790,8 +2047,8 @@
                 </h2>
 
                 <p>
-                    A selection of mechanical, MEP, industrial utility,
-                    and engineering analysis projects.
+                    Mechanical, MEP, industrial utility, and engineering
+                    analysis projects.
                 </p>
 
             </div>
@@ -1800,11 +2057,13 @@
             <div class="projects-grid">
 
 
-                <!-- PROJECT 01 -->
+                <!-- =================================================
+                     PROJECT 01
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-image-grid">
+                    <div class="project-images">
 
                         <img
                             src="HVAC Project 1.jpeg"
@@ -1817,6 +2076,7 @@
                         >
 
                     </div>
+
 
                     <div class="project-content">
 
@@ -1835,10 +2095,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>AutoCAD</span>
                             <span>GstarCAD</span>
                             <span>HVAC</span>
                             <span>DED</span>
+
                         </div>
 
                     </div>
@@ -1847,11 +2109,13 @@
 
 
 
-                <!-- PROJECT 02 -->
+                <!-- =================================================
+                     PROJECT 02
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-image-grid">
+                    <div class="project-images">
 
                         <img
                             src="pompa hydran.jpg"
@@ -1864,6 +2128,7 @@
                         >
 
                     </div>
+
 
                     <div class="project-content">
 
@@ -1882,10 +2147,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>Fire Protection</span>
                             <span>Hydrant</span>
                             <span>Fire Pump</span>
                             <span>AutoCAD</span>
+
                         </div>
 
                     </div>
@@ -1894,11 +2161,13 @@
 
 
 
-                <!-- PROJECT 03 -->
+                <!-- =================================================
+                     PROJECT 03
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-image-grid">
+                    <div class="project-images">
 
                         <img
                             src="foto gensettttt.jpg"
@@ -1911,6 +2180,7 @@
                         >
 
                     </div>
+
 
                     <div class="project-content">
 
@@ -1929,10 +2199,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>Genset</span>
                             <span>ATS/AMF</span>
                             <span>MVMDP</span>
                             <span>LVMDP</span>
+
                         </div>
 
                     </div>
@@ -1941,11 +2213,13 @@
 
 
 
-                <!-- PROJECT 04 -->
+                <!-- =================================================
+                     PROJECT 04
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-image-grid">
+                    <div class="project-images project-three">
 
                         <img
                             src="boiler 1.jpeg"
@@ -1962,9 +2236,8 @@
                             alt="Boiler 3"
                         >
 
-                        <div style="background:#080808;"></div>
-
                     </div>
+
 
                     <div class="project-content">
 
@@ -1983,10 +2256,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>Boiler</span>
                             <span>Thermal Efficiency</span>
                             <span>Piping</span>
                             <span>Maintenance</span>
+
                         </div>
 
                     </div>
@@ -1995,11 +2270,13 @@
 
 
 
-                <!-- PROJECT 05 -->
+                <!-- =================================================
+                     PROJECT 05
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-image-grid">
+                    <div class="project-images">
 
                         <img
                             src="zscore.png"
@@ -2012,6 +2289,7 @@
                         >
 
                     </div>
+
 
                     <div class="project-content">
 
@@ -2030,10 +2308,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>MATLAB</span>
                             <span>K-Means</span>
                             <span>Copernicus</span>
                             <span>Power Density</span>
+
                         </div>
 
                     </div>
@@ -2042,11 +2322,13 @@
 
 
 
-                <!-- PROJECT 06 -->
+                <!-- =================================================
+                     PROJECT 06
+                ================================================== -->
 
                 <article class="project-card">
 
-                    <div class="project-single-image">
+                    <div class="project-single">
 
                         <img
                             src="desain plumbing.jpeg"
@@ -2054,6 +2336,7 @@
                         >
 
                     </div>
+
 
                     <div class="project-content">
 
@@ -2071,10 +2354,12 @@
                         </p>
 
                         <div class="project-tools">
+
                             <span>Plumbing</span>
                             <span>AutoCAD</span>
                             <span>MEP</span>
                             <span>DED</span>
+
                         </div>
 
                     </div>
@@ -2083,11 +2368,13 @@
 
 
 
-                <!-- PROJECT 07 -->
+                <!-- =================================================
+                     PROJECT 07 — FEATURED
+                ================================================== -->
 
-                <article class="project-card project-center">
+                <article class="project-card project-featured">
 
-                    <div class="project-image-grid">
+                    <div class="project-images">
 
                         <img
                             src="Ban.png"
@@ -2111,6 +2398,7 @@
 
                     </div>
 
+
                     <div class="project-content">
 
                         <span class="project-tag">
@@ -2124,14 +2412,16 @@
                         <p>
                             3D mechanical modeling and component design
                             using Autodesk Inventor, covering several
-                            mechanical parts and assemblies.
+                            mechanical components and assemblies.
                         </p>
 
                         <div class="project-tools">
+
                             <span>Autodesk Inventor</span>
                             <span>3D Modeling</span>
                             <span>Mechanical Design</span>
                             <span>CAD</span>
+
                         </div>
 
                     </div>
@@ -2147,9 +2437,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          EDUCATION
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="education">
 
@@ -2170,9 +2460,13 @@
 
             <div class="education-box">
 
+
                 <div class="education-year">
+
                     2021 — 2025
+
                 </div>
+
 
                 <div class="education-content">
 
@@ -2208,9 +2502,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          DOCUMENTATION
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="documentation">
 
@@ -2238,66 +2532,82 @@
 
 
                 <div class="documentation-item">
+
                     <img
                         src="foto gensettttt.jpg"
                         alt="Genset Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="pompa hydran.jpg"
                         alt="Hydrant Pump Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="boiler 1.jpeg"
                         alt="Boiler Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="boiler 2.jpeg"
                         alt="Boiler Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="HVAC Project 1.jpeg"
                         alt="HVAC Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="HVAC Project 2.jpeg"
                         alt="HVAC Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="desain plumbing.jpeg"
                         alt="Plumbing Documentation"
                     >
+
                 </div>
 
 
                 <div class="documentation-item">
+
                     <img
                         src="Diagram Schematic Fire Fighting.jpeg"
                         alt="Fire Fighting Documentation"
                     >
+
                 </div>
 
 
@@ -2309,15 +2619,15 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          CONTACT
-    ========================================================= -->
+    ====================================================== -->
 
     <section id="contact">
 
         <div class="container">
 
-            <div class="contact-wrapper">
+            <div class="contact-layout">
 
 
                 <div>
@@ -2347,13 +2657,15 @@
                         href="tel:085775712011"
                         class="contact-link"
                     >
+
                         <span>
                             Phone
                         </span>
 
-                        <span>
+                        <span class="contact-arrow">
                             085775712011
                         </span>
+
                     </a>
 
 
@@ -2361,13 +2673,15 @@
                         href="mailto:wluutfi@gmail.com"
                         class="contact-link"
                     >
+
                         <span>
                             Email
                         </span>
 
-                        <span>
+                        <span class="contact-arrow">
                             wluutfi@gmail.com
                         </span>
+
                     </a>
 
 
@@ -2377,13 +2691,15 @@
                         rel="noopener"
                         class="contact-link"
                     >
+
                         <span>
                             LinkedIn
                         </span>
 
-                        <span>
+                        <span class="contact-arrow">
                             ↗
                         </span>
+
                     </a>
 
 
@@ -2393,13 +2709,15 @@
                         rel="noopener"
                         class="contact-link"
                     >
+
                         <span>
                             GitHub
                         </span>
 
-                        <span>
+                        <span class="contact-arrow">
                             ↗
                         </span>
+
                     </a>
 
 
@@ -2413,9 +2731,9 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-    ========================================================= -->
+    ====================================================== -->
 
     <footer>
 
@@ -2430,39 +2748,49 @@
 
 
 
-    <!-- =========================================================
-         MOBILE MENU SCRIPT
-    ========================================================= -->
+    <!-- =====================================================
+         MOBILE NAVIGATION SCRIPT
+    ====================================================== -->
 
     <script>
 
-        const menuToggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
 
         menuToggle.addEventListener("click", function () {
 
             navLinks.classList.toggle("active");
 
             if (navLinks.classList.contains("active")) {
+
                 menuToggle.textContent = "✕";
+
             } else {
+
                 menuToggle.textContent = "☰";
+
             }
 
         });
 
 
-        document.querySelectorAll(".nav-links a").forEach(function(link) {
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
 
-            link.addEventListener("click", function() {
+                link.addEventListener("click", function() {
 
-                navLinks.classList.remove("active");
+                    navLinks.classList.remove("active");
 
-                menuToggle.textContent = "☰";
+                    menuToggle.textContent = "☰";
+
+                });
 
             });
-
-        });
 
     </script>
 
